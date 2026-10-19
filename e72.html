@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zipline Optimization — Freja Johnson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap">
+<style>
+body{margin:0;background:#FAF9F6}
+a{color:#5146B0}a:hover{color:#2F2878}
+.nl{text-decoration:none}
+.nl:hover{background:#F1EFFC;color:#1F1D2B}
+.nl:active{background:#E6E2FA}
+.btn{transition:transform .35s cubic-bezier(.34,1.56,.64,1);text-decoration:none}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.nl:focus-visible,.btn:focus-visible{outline:2px solid #5146B0;outline-offset:3px}
+.dots{background-image:radial-gradient(#D6D0F2 1px,transparent 1.2px);background-size:20px 20px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+
+</style>
+</head>
+<body>
+<div style="font-family: 'Schibsted Grotesk', system-ui, sans-serif; color: #1F1D2B; background: #FAF9F6; min-height: 100vh">
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(250,249,246,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #E7E4EF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+<a href="index.html" class="nl" style="display: flex; align-items: center; gap: 12px; color: #1F1D2B; border-radius: 12px; padding: 4px">
+<span style="width: 40px; height: 40px; border-radius: 12px; background: #E6E2FA; display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; color: #3B3290">FJ</span>
+<span style="font-weight: 700; font-size: 16px; letter-spacing: -0.01em">Freja Johnson</span>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px">
+<a href="index.html" class="nl" style="padding: 10px 16px; border-radius: 999px; font-size: 15px; font-weight: 500; color: #4A4858">Home</a>
+<a href="projects.html" class="nl" aria-current="page" style="padding: 10px 16px; border-radius: 999px; font-size: 15px; font-weight: 600; color: #1F1D2B; background: #E6E2FA">Projects</a>
+<a href="resume.html" class="nl" style="padding: 10px 16px; border-radius: 999px; font-size: 15px; font-weight: 500; color: #4A4858">Resume</a>
+<a href="about.html" class="nl" style="padding: 10px 16px; border-radius: 999px; font-size: 15px; font-weight: 500; color: #4A4858">About</a>
+<a href="https://www.linkedin.com/in/freja-johnson-97a7542a3" target="_blank" rel="noopener" class="nl" aria-label="LinkedIn profile (opens in new tab)" style="margin-left: 8px; display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; border: 1px solid #D9D5EA; font-size: 14px; font-weight: 600; color: #1F1D2B; background: #FFFFFF">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"></path></svg>
+LinkedIn</a>
+</nav>
+</div>
+</header>
+
+<section class="dots" style="background-color: #F3F1FC; border-bottom: 1px solid #E7E4EF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 32px 24px 56px; display: flex; flex-direction: column; gap: 28px">
+<a href="projects.html" class="nl" style="align-self: flex-start; padding: 8px 12px; margin-left: -12px; border-radius: 999px; font-size: 14px; font-weight: 600; color: #5146B0">← All projects</a>
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #335A3F; letter-spacing: 0.04em">E72 · APPLIED MATH FOR ENGINEERS · MAY 2026</div>
+<h1 style="margin: 0; font-size: 56px; line-height: 1.04; font-weight: 800; letter-spacing: -0.035em">Zipline Velocity, <span style="font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: #5146B0">Constrained Optimization</span></h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #4A4858; max-width: 640px">How fast can a zipline be while staying safe for every rider? I modeled a rope that changes shape under the rider, then searched the design space for the drop and tension that maximize peak speed.</p>
+</div>
+<div style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border-radius: 24px; padding: 16px; box-shadow: 0 1px 2px rgba(60,50,120,0.06), 0 16px 40px -18px rgba(60,50,120,0.28)">
+<img src="assets/img/ab749977-ff83-4084-babd-5f9924922dd4.jpg" alt="Rider position along the zipline for 30, 70 and 140 kg riders over a 500 m span" style="display: block; width: 100%; height: 260px; object-fit: contain">
+</div>
+</div>
+<dl style="margin: 0; display: flex; flex-wrap: wrap; gap: 12px">
+<div style="flex: 1 1 200px; background: #FFFFFF; border-radius: 16px; padding: 16px 18px; border: 1px solid #ECE9F3"><dt style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B6878; letter-spacing: 0.05em">TYPE</dt><dd style="margin: 6px 0 0; font-size: 15px; line-height: 1.5">Individual technical write-up</dd></div>
+<div style="flex: 1 1 200px; background: #FFFFFF; border-radius: 16px; padding: 16px 18px; border: 1px solid #ECE9F3"><dt style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B6878; letter-spacing: 0.05em">INSTRUCTORS</dt><dd style="margin: 6px 0 0; font-size: 15px; line-height: 1.5">Profs. Bassman &amp; Yong</dd></div>
+<div style="flex: 1 1 240px; background: #FFFFFF; border-radius: 16px; padding: 16px 18px; border: 1px solid #ECE9F3"><dt style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B6878; letter-spacing: 0.05em">TOOLS</dt><dd style="margin: 6px 0 0; font-size: 15px; line-height: 1.5">MATLAB · fsolve · ODE integration · fmincon</dd></div>
+<div style="flex: 1 1 200px; background: #FFFFFF; border-radius: 16px; padding: 16px 18px; border: 1px solid #ECE9F3"><dt style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B6878; letter-spacing: 0.05em">CONSTRAINTS</dt><dd style="margin: 6px 0 0; font-size: 15px; line-height: 1.5">T ≤ 50 kN · drop 10–40 m · exit ≤ 5 m/s</dd></div>
+</dl>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+<a href="assets/docs/E72_Zipline_Writeup.pdf" target="_blank" rel="noopener" class="btn" style="display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 999px; background: #1F1D2B; color: #FFFFFF; font-size: 15px; font-weight: 600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6M12 12v6M9 15l3 3 3-3"></path></svg>Read the full write-up (PDF)</a>
+</div>
+</div>
+</section>
+
+<div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 88px; display: flex; flex-direction: column; gap: 72px">
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1 1 200px; background: #FFFFFF; border-radius: 20px; padding: 22px 24px; border: 1px solid #ECE9F3"><div style="font-size: 40px; font-weight: 800; letter-spacing: -0.04em">40 m</div><div style="font-size: 14px; line-height: 1.5; color: #6B6878">optimal vertical drop</div></div>
+<div style="flex: 1 1 200px; background: #F3F1FC; border-radius: 20px; padding: 22px 24px"><div style="font-size: 40px; font-weight: 800; letter-spacing: -0.04em; color: #3B3290">39,571 N</div><div style="font-size: 14px; line-height: 1.5; color: #4A4858">optimal rope tension</div></div>
+<div style="flex: 1 1 200px; background: #FFFFFF; border-radius: 20px; padding: 22px 24px; border: 1px solid #ECE9F3"><div style="font-size: 40px; font-weight: 800; letter-spacing: -0.04em">12.87 m/s</div><div style="font-size: 14px; line-height: 1.5; color: #6B6878">peak speed, 70 kg rider</div></div>
+<div style="flex: 1 1 200px; background: #EEF5F0; border-radius: 20px; padding: 22px 24px"><div style="font-size: 40px; font-weight: 800; letter-spacing: -0.04em; color: #335A3F">≤ 3.46 m/s</div><div style="font-size: 14px; line-height: 1.5; color: #4A4858">every exit speed, under the 5 m/s limit</div></div>
+</div>
+
+<section style="display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 260px; min-width: 0"><h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 40px; letter-spacing: -0.02em">The problem</h2></div>
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 16px; font-size: 17px; line-height: 1.75; color: #4A4858">
+<p style="margin: 0">A zipline isn’t a straight line. Gravity pulls the rope into a catenary, and the rider’s own weight reshapes it as they travel — so the slope of the rope at any point depends on where the rider is. Using the equations from a study on rope tensions, the task was to choose two decision variables (vertical drop and rope tension) to maximize a 70 kg rider’s peak speed over a 500 m span.</p>
+<p style="margin: 0">The catch: the same design has to work for 30, 70 and 140 kg riders. None of them can stall before the end, and none can arrive faster than 5 m/s.</p>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 28px">
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 40px; letter-spacing: -0.02em">Method</h2>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 20px">
+<li style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border-radius: 20px; padding: 26px; border: 1px solid #ECE9F3; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 36px; height: 36px; border-radius: 10px; background: #E6E2FA; color: #3B3290; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 500">01</span>
+<strong style="font-size: 18px">Solve the rope shape</strong>
+<span style="font-size: 15px; line-height: 1.7; color: #4A4858">Relating the start angle and rider weight to dimensionless parameters a₀ and b₀ gave three equations in three unknowns (a₀, b₀, rope length). MATLAB’s fsolve found them, which fixes the zipline’s geometry.</span>
+</li>
+<li style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border-radius: 20px; padding: 26px; border: 1px solid #ECE9F3; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 36px; height: 36px; border-radius: 10px; background: #E6E2FA; color: #3B3290; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 500">02</span>
+<strong style="font-size: 18px">Trace the rider’s speed</strong>
+<span style="font-size: 15px; line-height: 1.7; color: #4A4858">Stepping the rider’s fractional position f from 0 to 1, I recomputed the deformed path and its slope, then integrated the velocity ODE with gravity and aerodynamic drag (A = 0.05·m<sup>2/3</sup>).</span>
+</li>
+<li style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border-radius: 20px; padding: 26px; border: 1px solid #ECE9F3; display: flex; flex-direction: column; gap: 10px">
+<span style="width: 36px; height: 36px; border-radius: 10px; background: #E6E2FA; color: #3B3290; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 500">03</span>
+<strong style="font-size: 18px">Optimize with penalties</strong>
+<span style="font-size: 15px; line-height: 1.7; color: #4A4858">fmincon searched drop and tension for the highest peak speed, with a penalty method pushing the solver away from designs where any rider stalls or exits too fast.</span>
+</li>
+</ol>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 28px">
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 40px; letter-spacing: -0.02em">Results</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<figure style="flex: 3 1 460px; min-width: 0; margin: 0; background: #FFFFFF; border-radius: 20px; padding: 16px; border: 1px solid #ECE9F3">
+<img src="assets/img/8bbce20e-5ca5-4e91-a1f2-83c081a08d74.jpg" alt="Velocity profiles along the zipline for the three riders; heavier riders peak higher" style="display: block; width: 100%; height: 340px; object-fit: contain">
+<figcaption style="padding: 10px 6px 4px; font-size: 14px; color: #6B6878">Velocity profiles for the three riders at the optimal design.</figcaption>
+</figure>
+<div style="flex: 2 1 320px; min-width: 0; background: #FFFFFF; border-radius: 20px; border: 1px solid #ECE9F3; overflow-x: auto">
+<table style="width: 100%; border-collapse: collapse; font-size: 15px">
+<caption style="text-align: left; padding: 18px 20px 6px; font-weight: 700; font-size: 16px">Rider outcomes</caption>
+<thead><tr style="text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B6878; letter-spacing: 0.04em"><th style="padding: 10px 20px; font-weight: 500">RIDER</th><th style="padding: 10px 20px; font-weight: 500">PEAK</th><th style="padding: 10px 20px; font-weight: 500">EXIT</th></tr></thead>
+<tbody>
+<tr style="border-top: 1px solid #F0EEF5"><td style="padding: 14px 20px">30 kg</td><td style="padding: 14px 20px">11.52 m/s</td><td style="padding: 14px 20px">0.61 m/s</td></tr>
+<tr style="border-top: 1px solid #F0EEF5; background: #F7F6FD"><td style="padding: 14px 20px; font-weight: 600">70 kg</td><td style="padding: 14px 20px; font-weight: 600">12.87 m/s</td><td style="padding: 14px 20px">2.23 m/s</td></tr>
+<tr style="border-top: 1px solid #F0EEF5"><td style="padding: 14px 20px">140 kg</td><td style="padding: 14px 20px">14.02 m/s</td><td style="padding: 14px 20px">3.46 m/s</td></tr>
+</tbody>
+</table>
+<p style="margin: 0; padding: 14px 20px 20px; font-size: 14px; line-height: 1.6; color: #6B6878">The optimum sits on the 40 m drop bound: the solver pushed as far as the constraints allowed without any rider stalling or exceeding 5 m/s.</p>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-wrap: wrap; gap: 24px">
+<div style="flex: 1 1 380px; min-width: 0; background: #FFFFFF; border: 1px solid #ECE9F3; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 32px; letter-spacing: -0.02em">Assumptions</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.75; color: #4A4858">No rope friction or wind, uniform rope density, constant rider posture and zero initial velocity. These hold if operators enforce standard riding rules and close in high wind, and if trolley bearings are engineered to make friction negligible.</p>
+</div>
+<div style="flex: 1 1 380px; min-width: 0; background: #F3F1FC; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 32px; letter-spacing: -0.02em">What I took away</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.75; color: #4A4858">Optimization was my favorite part of the course and the tool I expect to use most as an engineer. Being able to apply what we learned in MATLAB to a physical system with real safety limits made it click.</p>
+</div>
+</section>
+
+<nav aria-label="More projects" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; border-top: 1px solid #E7E4EF; padding-top: 32px">
+<a href="e80.html" class="btn" style="display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECE9F3; color: #1F1D2B"><span style="font-size: 13px; color: #6B6878">← Previous</span><strong style="font-size: 16px">Spectral Analysis Diving Robot</strong></a>
+<a href="machine-shop.html" class="btn" style="display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; border-radius: 16px; background: #FFFFFF; border: 1px solid #ECE9F3; color: #1F1D2B; text-align: right"><span style="font-size: 13px; color: #6B6878">Next →</span><strong style="font-size: 16px">Machine shop leadership</strong></a>
+</nav>
+</div>
+
+<footer style="border-top: 1px solid #E7E4EF; background: #F3F1FC">
+<div style="max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: #6B6878">
+<span>© 2026 Freja Johnson · Claremont, CA &amp; the Pacific Northwest</span>
+<span style="display: flex; gap: 20px; flex-wrap: wrap"><a href="mailto:frjohnson@g.hmc.edu">frjohnson@g.hmc.edu</a><a href="https://www.linkedin.com/in/freja-johnson-97a7542a3" target="_blank" rel="noopener">LinkedIn</a></span>
+</div>
+</footer>
+
+</div>
+</body>
+</html>

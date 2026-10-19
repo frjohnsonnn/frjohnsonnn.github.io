@@ -1,0 +1,13 @@
+# private notes
+job_advice_chats.txt
+
+# local screenshot output
+temporary screenshots/
+
+# raw source material (the site uses the copies in assets/)
+*.heic
+*.heif
+*.PNG
+*.png
+!assets/**/*.png
+/*.pdf
