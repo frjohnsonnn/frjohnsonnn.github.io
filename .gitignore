@@ -11,3 +11,6 @@ temporary screenshots/
 *.png
 !assets/**/*.png
 /*.pdf
+
+# design source file (not part of the live site)
+Freja Johnson — Portfolio.html

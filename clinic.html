@@ -77,33 +77,13 @@ LinkedIn</a>
 <h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 40px; letter-spacing: -0.02em">The test bench</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch">
 <figure style="flex: 3 1 520px; min-width: 0; margin: 0; background: #EEF5F0; border-radius: 24px; padding: 28px; box-sizing: border-box">
-<svg viewBox="0 0 320 170" width="100%" role="img" aria-label="Block diagram of the test bench: fiber spool inside a heated chamber with heater, linear actuator and sensors, wired to a LabJack T4 DAQ and a polarimeter">
-<rect x="8" y="16" width="176" height="138" rx="12" fill="#FFFFFF" stroke="#7FA88A" stroke-width="1.5" stroke-dasharray="5 4"></rect>
-<text x="20" y="34" font-family="JetBrains Mono, monospace" font-size="9" fill="#335A3F">HEATED CHAMBER</text>
-<circle cx="70" cy="92" r="30" fill="none" stroke="#5146B0" stroke-width="2"></circle>
-<circle cx="70" cy="92" r="22" fill="none" stroke="#5146B0" stroke-width="2"></circle>
-<circle cx="70" cy="92" r="14" fill="none" stroke="#5146B0" stroke-width="2"></circle>
-<text x="44" y="138" font-family="JetBrains Mono, monospace" font-size="8" fill="#4A4858">fiber spool</text>
-<rect x="118" y="50" width="54" height="22" rx="5" fill="#E6E2FA"></rect>
-<text x="126" y="64" font-family="JetBrains Mono, monospace" font-size="8" fill="#3B3290">heater</text>
-<rect x="118" y="80" width="54" height="22" rx="5" fill="#E6E2FA"></rect>
-<text x="122" y="94" font-family="JetBrains Mono, monospace" font-size="8" fill="#3B3290">actuator</text>
-<rect x="118" y="110" width="54" height="22" rx="5" fill="#E6E2FA"></rect>
-<text x="124" y="124" font-family="JetBrains Mono, monospace" font-size="8" fill="#3B3290">T / accel</text>
-<path d="M172 91 H214" stroke="#7FA88A" stroke-width="1.5"></path>
-<rect x="214" y="70" width="96" height="42" rx="8" fill="#335A3F"></rect>
-<text x="230" y="88" font-family="JetBrains Mono, monospace" font-size="9" fill="#FFFFFF">LabJack T4</text>
-<text x="230" y="101" font-family="JetBrains Mono, monospace" font-size="8" fill="#CFE1D3">closed loop</text>
-<path d="M100 92 C140 150 200 150 214 140" stroke="#5146B0" stroke-width="1.5" fill="none"></path>
-<rect x="214" y="124" width="96" height="30" rx="8" fill="#FFFFFF" stroke="#5146B0" stroke-width="1.5"></rect>
-<text x="228" y="143" font-family="JetBrains Mono, monospace" font-size="8" fill="#3B3290">polarimeter</text>
-</svg>
-<figcaption style="margin-top: 14px; font-size: 14px; color: #335A3F">System sketch of the bench. Stressors on the left, control and measurement on the right.</figcaption>
+<img src="assets/img/clinic-system-diagram.png" alt="Test bench system diagram: 1310 nm laser, APC/UPC connector, polarizer and polarization controller feed the fiber under test in a chamber with cooling pipes and a fan; thermistors, an airflow sensor and a vibration sensor feed a DAQ and microcontroller; a chiller (10–60 °C, ±0.01 °C) and polarimeter connect to lab PC scripts that log .csv/.json data" style="display: block; width: 100%; height: auto; border-radius: 16px; background: #000000">
+<figcaption style="margin-top: 14px; font-size: 14px; color: #335A3F">System diagram: optical path, test chamber, sensors + DAQ, and the lab PC scripts that control temperature and log every run.</figcaption>
 </figure>
 <div style="flex: 2 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
-<div style="background: #FFFFFF; border-radius: 18px; padding: 20px 22px; border: 1px solid #ECE9F3"><strong style="display: block; font-size: 16px; margin-bottom: 4px">Closed-loop temperature</strong><span style="font-size: 15px; line-height: 1.65; color: #4A4858">Heating elements inside a heat-controlled chamber, regulated from temperature sensor feedback.</span></div>
-<div style="background: #FFFFFF; border-radius: 18px; padding: 20px 22px; border: 1px solid #ECE9F3"><strong style="display: block; font-size: 16px; margin-bottom: 4px">Closed-loop vibration</strong><span style="font-size: 15px; line-height: 1.65; color: #4A4858">Linear actuators driven against accelerometer readings, so vibration is a set input.</span></div>
-<div style="background: #FFFFFF; border-radius: 18px; padding: 20px 22px; border: 1px solid #ECE9F3"><strong style="display: block; font-size: 16px; margin-bottom: 4px">Modular, compact fixture</strong><span style="font-size: 15px; line-height: 1.65; color: #4A4858">Fiber length and cable management can be swapped between runs without rebuilding the rig.</span></div>
+<div style="background: #FFFFFF; border-radius: 18px; padding: 20px 22px; border: 1px solid #ECE9F3"><strong style="display: block; font-size: 16px; margin-bottom: 4px">Closed-loop temperature</strong><span style="font-size: 15px; line-height: 1.65; color: #4A4858">A chiller (10–60 °C, ±0.01 °C) runs water through cooling pipes in the chamber, with a PWM fan and thermistor feedback controlled from the lab PC.</span></div>
+<div style="background: #FFFFFF; border-radius: 18px; padding: 20px 22px; border: 1px solid #ECE9F3"><strong style="display: block; font-size: 16px; margin-bottom: 4px">Sensing &amp; data acquisition</strong><span style="font-size: 15px; line-height: 1.65; color: #4A4858">Thermistors and an airflow sensor feed the DAQ; a vibration sensor runs through a microcontroller. Everything logs to .csv / .json.</span></div>
+<div style="background: #FFFFFF; border-radius: 18px; padding: 20px 22px; border: 1px solid #ECE9F3"><strong style="display: block; font-size: 16px; margin-bottom: 4px">Polarization optical path</strong><span style="font-size: 15px; line-height: 1.65; color: #4A4858">A 1310 nm laser passes through the connector, polarizer and polarization controller into the fiber under test, then out to the polarimeter.</span></div>
 </div>
 </div>
 </section>
@@ -119,9 +99,15 @@ LinkedIn</a>
 <span style="padding: 6px 12px; border-radius: 999px; background: #E6E2FA; color: #3B3290; font-size: 13px; font-weight: 600">Data analysis</span>
 </div>
 </div>
-<div style="flex: 1 1 420px; min-width: 0; min-height: 280px; border-radius: 24px; border: 1.5px dashed #B3AAE6; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #5146B0; padding: 24px; box-sizing: border-box; text-align: center">
-<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><circle cx="12" cy="12" r="3.2"></circle><path d="M8 5l1.5-2h5L16 5"></path></svg>
-<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px">[Photo: test bench — once cleared by sponsor]</span>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<figure style="margin: 0; background: #FFFFFF; border-radius: 20px; overflow: hidden; border: 1px solid #ECE9F3">
+<img src="assets/img/clinic-optical-bench.png" alt="Optical bench fixture with micrometer alignment stages, fiber mounts and a readout on a long rail" style="display: block; width: 100%; height: 220px; object-fit: cover; background: #E8E8E8">
+<figcaption style="padding: 12px 16px 14px; font-size: 14px; color: #6B6878">Optical bench fixture for fiber alignment.</figcaption>
+</figure>
+<figure style="margin: 0; background: #FFFFFF; border-radius: 20px; overflow: hidden; border: 1px solid #ECE9F3">
+<img src="assets/img/clinic-fiber-enclosure.png" alt="Compact fiber optic enclosure with fiber pigtails entering each side" style="display: block; width: 100%; height: 220px; object-fit: contain; background: #FFFFFF">
+<figcaption style="padding: 12px 16px 14px; font-size: 14px; color: #6B6878">Fiber enclosure, inline with the fiber under test.</figcaption>
+</figure>
 </div>
 </section>
 
